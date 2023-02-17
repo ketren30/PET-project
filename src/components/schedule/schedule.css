@@ -1,0 +1,49 @@
+.tablica {
+    font-size: 13px;
+    border: 1px solid #524f4e;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 105%;
+    text-transform: none;
+    font-weight: 300;
+    margin-left: -2%;
+}
+.tablica th:nth-child(1) {
+    width: 5%
+}
+.tablica th:nth-child(n+2) {
+    width: 16%;
+}
+.tablica th, td, .active-td {
+    border: 1px solid #524f4e;
+    text-align: center;
+    cursor: default;
+}
+.bold-blue, .bold-green, .bold-red {
+    font-weight: 600;
+}
+.bold-blue {
+    color: rgb(79, 79, 241)
+}
+.bold-green {
+    color: green;
+}
+.bold-red {
+    color: rgb(245, 55, 55);
+}
+.tablica th, .header {
+    font-weight: 800;
+    text-transform: uppercase;
+    height: 30px;
+}
+.side-header {
+    font-weight: 800;
+}
+.tablica thead th {
+    position: sticky;
+    top: 0;
+    background: white;
+}
+.active-td {
+    background-color: #fdb5a88f;
+}

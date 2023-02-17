@@ -1,0 +1,32 @@
+.wr {
+    position: relative;
+}
+.pink-figure {
+    width: 600px;
+    height: 350px;
+    border-radius: 17% 83% 80% 20% / 7% 26% 74% 93% ;
+    background-color: #fe786067;
+    position: absolute;
+    left: 45%;
+    top: 5%;
+    z-index: -2;
+}
+.blue-figure {
+    width: 600px;
+    height: 350px;
+    border-radius: 20% 95% 57% 43% / 78% 62% 84% 71%;
+    background-color: #76c4db90;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+    z-index: -1;
+}
+.text {
+    text-transform: none;
+    text-indent: 30px;
+    font-size: 18px;
+}
+.text b {
+    font-size: 20px;
+    color: black;
+}

@@ -1,0 +1,99 @@
+.modal {
+    position: fixed;
+    width: 420px;
+    height: 260px;
+    padding-left: 10px;
+    background-color: #e2edf3;
+    border-radius: 15px;
+    border: 1px solid rgb(204, 200, 200);
+    line-height: 30px;
+    z-index: +2;
+    box-shadow: 4px 4px 5px #d5e6f0;
+}
+.modalInput, modalInput:focus {
+    border: none;
+    border-bottom: 1px solid grey;
+    height: 30px;
+    width: 150px;
+    outline: none;
+    background-color: #e2edf3;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #524f4e;
+}
+.modal h6{
+    margin: 0;
+}
+.select-css { 
+    display: inline-block; 
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #524f4e;
+    font-weight: 600;
+    line-height: 1.3; 
+    padding: 7px 20px 7px 10px; 
+    max-width: fit-content; 
+    box-sizing: border-box; 
+    margin: 0; 
+    border: 1px solid #aaa;
+    border-radius: .5em;
+     -moz-appearance: none;
+     -webkit-appearance: none;
+     appearance: none;
+     background-color: #fff; 
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%); 
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%; 
+    } 
+    .select-css::-ms-expand { 
+        display: none; 
+    } 
+    .select-css:hover { 
+        border-color: #888; 
+    } 
+    .select-css:focus { 
+        border-color: #aaa;
+        outline: none; 
+    } 
+    .select-css option { 
+        font-weight: 600; 
+        padding-right: 5px;
+    }
+
+    .submitButton {
+        text-decoration: none;
+        width: fit-content;
+        padding: 0 10px;
+        height: 35px;
+        line-height: 30px;
+        border-radius: 45px;
+        border: 2px solid #524f4e;
+        margin: 10px 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 2px;
+        font-weight: 600;
+        color: #524f4e;
+        background: #A7C0CD;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+        transition: .3s;
+      }
+
+      .submitButton:disabled {
+        border: 1px solid #b3afae;
+        background-color: #e5e5e5;
+        color: #a7a4a3;
+      }
+      .close {
+        position: absolute;
+        top: 5px;
+        left: 400px;
+        width: 18px;
+        height: 18px;
+        cursor: default;
+      }

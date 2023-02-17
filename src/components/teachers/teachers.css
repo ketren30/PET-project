@@ -1,0 +1,61 @@
+.swiper-container {
+    width: 500px;
+  }
+  
+  .swiper-pagination {
+    bottom: 0;
+    padding-bottom: 10px;
+  }
+  
+  .swiper-wrapper {
+    padding-inline-start: 0;
+    width: 700px;
+  }
+  .swiper {
+    width: 800px;
+    height: 680px;
+    background-color: #a7c0cd8e;
+    border-radius: 30px;
+    margin-top: 30px;
+  }
+
+  .picture {
+    width: 700px;
+    list-style: none;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .pink-back {
+    background-color: #fe78608f;
+    height: 30%;
+    z-index: -1;
+    margin-top: 100px;
+    position: relative;
+    padding: 40px;
+  }
+
+.absolute-picture {
+  position: absolute;
+  width: 40%;
+  border-radius: 30px;
+  left: 55%;
+  top: -50px;
+}
+.text-around {
+  width: 45%;
+  height: 220px;
+  align-self: flex-start; 
+  font-size: 1.25vw;
+}
+.center-block {
+  width: 70%;
+}
+.description {
+  width: 700px;
+  text-align: justify;
+  text-transform: none;
+}
