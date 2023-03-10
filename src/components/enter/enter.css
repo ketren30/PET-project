@@ -1,7 +1,6 @@
 .logging-wrapper {
     height: 90%;
 }
-
 .form {
     position: relative;
     width: 300px;
@@ -19,15 +18,14 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-image: url('../../images/back-flag.jpg'); 
+    background-image: url('https://ucarecdn.com/5e0dc90b-6267-47ea-9ad6-1b7e6e557b8d/backflag.jpg'); 
     background-size: cover;
     width: 100%;
     height: 100%;
     opacity : 0.3;
     z-index: -1;
 }
-
-.button {
+.logging-button {
     width: 220px;
     font-size: 1.2vw;
     font-family: 'Montserrat', sans-serif;
@@ -42,13 +40,11 @@
     font-weight: 600;
     margin-top: 40px;
 }
-
-.button:disabled {
+.logging-button:disabled {
     background: linear-gradient(#f3ab9e, #f8cec7, #f3ab9e); 
     color: rgb(126, 123, 123);
 }
-
-.input, input:focus {
+.logging-input, .logging-input:focus {
     border: none;
     height: 45px;
     width: 200px;
@@ -62,7 +58,7 @@
     text-align: center;
 }
 
-.input::placeholder {
+.logging-input::placeholder {
     font-size: 1vw;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;

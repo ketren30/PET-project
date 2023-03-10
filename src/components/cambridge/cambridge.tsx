@@ -1,13 +1,12 @@
 import React from 'react';
-import banner from '../../images/exambanner.jpg';
 import './cambridge.css';
-import download from '../../images/download.png';
 
 
 export const Cambridge: React.FC = () => {
+    const imageLink='https://ucarecdn.com/2d31831b-aa6c-42f1-93b5-16b568e53f5b/download.png'
     return (
-        <div className='wrapper'>
-            <img src={banner} className='banner'/>
+        <div className='cambridge-wrapper'>
+            <img src='https://ucarecdn.com/dfb60b23-3d41-463f-b765-dbcf591899ca/exambanner.jpg' className='banner'/>
             <div className='exam-text'>
                 <h3>
                     Школа английского языка Enjoy English является авторизованным экзаменационным центром 
@@ -97,15 +96,15 @@ export const Cambridge: React.FC = () => {
 
                 <div className='flex-wrapper'>
                     <div className='link'>
-                        <img src={download} className='pic-icon'></img>
+                        <img src={imageLink} className='pic-icon'></img>
                         <a href='https://www.cambridgeenglish.org/Images/153312-yle-information-for-candidates.pdf'>Что будет на экзамене Starters</a>
                     </div>
                     <div className='link'>
-                        <img src={download} className='pic-icon'></img>
+                        <img src={imageLink} className='pic-icon'></img>
                         <a href='https://www.cambridgeenglish.org/images/153312-yle-information-for-candidates.pdf'>Что будет на экзамене Movers</a>
                     </div>
                     <div className='link'>
-                        <img src={download} className='pic-icon'></img>
+                        <img src={imageLink} className='pic-icon'></img>
                         <a href='https://www.cambridgeenglish.org/images/153312-yle-information-for-candidates.pdf'>Что будет на экзамене Flyers</a>
                     </div>
                 </div>
@@ -122,31 +121,19 @@ export const Cambridge: React.FC = () => {
                 <div className='line'></div>
                 <h2>Cambridge English: First (FCE)</h2>
                 <div className='line'></div>
-                <h2>Cambridge English: Advanced (CAE)</h2>
-                <div className='line'></div>
-                <h2>Cambridge English: Proficiency (CPE)</h2>
-                <div className='line'></div>
 
                 <div className='flex-wrapper'>
                     <div className='link'>
-                        <img src={download} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org.ru/Images/22106-ket-information-for-candidates.pdf'>Формат экзамена Key</a>
+                        <img src={imageLink} className='pic-icon'></img>
+                        <a href='https://drive.google.com/file/d/1lXzD-9gkwQ3J-C5buhHrDIjcP7q-DO4c/view?usp=share_link'>Формат экзамена Key</a>
                     </div>
                     <div className='link'>
-                        <img src={download} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org.ru/Images/24944-preliminary-information-for-candidates.pdf'>Формат экзамена Preliminary</a>
+                        <img src={imageLink} className='pic-icon'></img>
+                        <a href='https://drive.google.com/file/d/1Lpgy6tCBoTwfc-6k_Jln6WiqwDWkzGcj/view'>Формат экзамена Preliminary</a>
                     </div>
                     <div className='link'>
-                        <img src={download} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org.ru/Images/47528-information-for-candidates-document.pdf'>Формат экзамена First</a>
-                    </div>
-                    <div className='link'>
-                        <img src={download} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org/images/181151-cae-information-for-candidates-2016-document.pdf'>Формат экзамена Advanced</a>
-                    </div>
-                    <div className='link'>
-                        <img src={download} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org.ru/Images/127142-cambridge-english-proficiency-information-for-candidates.pdf'>Формат экзамена Proficiency</a>
+                        <img src={imageLink} className='pic-icon'></img>
+                        <a href='https://drive.google.com/file/d/1vyeIu_xnN-tlyf31-TEu-ax3qiPMUeM5/view?usp=share_link'>Формат экзамена First</a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,5 @@
-.tablica {
+
+.schedule-table {
     font-size: 13px;
     border: 1px solid #524f4e;
     border-collapse: collapse;
@@ -8,13 +9,13 @@
     font-weight: 300;
     margin-left: -2%;
 }
-.tablica th:nth-child(1) {
+.schedule-table th:nth-child(1) {
     width: 5%
 }
-.tablica th:nth-child(n+2) {
+.schedule-table th:nth-child(n+2) {
     width: 16%;
 }
-.tablica th, td, .active-td {
+.schedule-table th, td, .active-td {
     border: 1px solid #524f4e;
     text-align: center;
     cursor: default;
@@ -31,7 +32,7 @@
 .bold-red {
     color: rgb(245, 55, 55);
 }
-.tablica th, .header {
+.schedule-table th, .header {
     font-weight: 800;
     text-transform: uppercase;
     height: 30px;
@@ -39,11 +40,10 @@
 .side-header {
     font-weight: 800;
 }
-.tablica thead th {
+.table-title {
     position: sticky;
     top: 0;
-    background: white;
 }
-.active-td {
+.active-cell {
     background-color: #fdb5a88f;
 }

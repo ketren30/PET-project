@@ -43,13 +43,13 @@ export function FetchSchedule () {
     return async (dispatch: Dispatch): Promise<void> => {
         dispatch(ShowLoading());
 
-        const url = 'https://raw.githubusercontent.com/ketren30/english/main/english/src/components/schedule/schedule.json';
+        const url = 'https://api.jsonbin.io/v3/b/6400a25face6f33a22e826d4';
         
         const action = await (await fetch(url)).json();
 
         dispatch({
             type: actionTypes.fetchSchedule,
-            payload: action,
+            payload: action.record,
         });
 
         dispatch(HideLoading());
@@ -58,14 +58,26 @@ export function FetchSchedule () {
 }
 
     
-export const ChangeVisibility = () => {
+export const ShowModal = () => {
+    const action: types.MainAction = {
+        type: actionTypes.showModal
+    }
+    return action
+}
+export const HideModal = () => {
+    const action: types.MainAction = {
+        type: actionTypes.hideModal
+    }
+    return action
+}
+export const changeVisibility = () => {
     const action: types.MainAction = {
         type: actionTypes.changeVisibility
     }
     return action
 }
 
-export const ChooseCell = (indexes: (number|string)[]) => {
+export const ChooseCell = (indexes: types.changingCell) => {
     const action: types.MainAction = {
         type: actionTypes.chooseCell,
         payload: indexes
@@ -80,18 +92,26 @@ export const EditSchedule = (lesson: types.Lesson) => {
     }
     return action
 }
+export const DeleteLesson = () => {
+    const action: types.MainAction = {
+        type: actionTypes.deleteLesson
+    }
+    return action
+}
+
+
 
 export function FetchNews () {
     return async (dispatch: Dispatch): Promise<void> => {
         dispatch(ShowLoading());
 
-        const url = 'https://raw.githubusercontent.com/ketren30/english/main/english/src/components/news/news.json';
+        const url = 'https://api.jsonbin.io/v3/b/63ff2b48ebd26539d0875ca1';
         
         const action = await (await fetch(url)).json();
-
+        
         dispatch({
             type: actionTypes.fetchNews,
-            payload: action,
+            payload: action.record,
         });
 
         setTimeout(()=>dispatch(HideLoading()), 1500);
@@ -103,6 +123,14 @@ export const AddNews = (news: types.News) => {
     const action: types.MainAction = {
         type: actionTypes.addNews,
         payload: news
+    }
+    return action
+}
+
+export const DeleteNews = (index: number) => {
+    const action: types.MainAction = {
+        type: actionTypes.deleteNews,
+        payload: index
     }
     return action
 }

@@ -4,8 +4,8 @@ import * as types from '../../type';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Controller, Thumbs } from 'swiper';
 import { ThunkDispatch } from 'redux-thunk';
-import { FetchNews } from '../../store/actionCreators';
-import { AddNews } from '../../store/actionCreators';
+import { FetchNews, AddNews, DeleteNews } from '../../store/actionCreators';
+import { Widget } from "@uploadcare/react-widget";
 import './news.css';
 
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
@@ -17,34 +17,46 @@ export const News: React.FC = () => {
     const loading = useSelector((state: types.MainState) => state.news.loading);
     const [isAdding, setIsAdding] = useState(false);
     const [currentNews, setCurrentNews] = useState<string>('');
-    const [imgs, setImgs] = useState(void[]);
+    const [imgs, setImgs] = useState<string[]>([]);
+    const [imagesUuid, setImagesUuid] = useState<string|null>('');
+    const [vidgetValue, setVidgetValue] = useState<string>();
     
     useEffect(()=> {
         dispatch(FetchNews());
     }, [dispatch]);
 
-    const onSubmit = () => {
-        const news = {
-            date: (new Date(2022, 4, 30)).toString(),
-            photos: [],
+    const handleClear = (e: any) => {
+        e.preventDefault()
+        setCurrentNews('')
+    }
+    const handleChange = (e: any) => {
+        setCurrentNews(e.target.value)
+    }
+    
+    const onSubmit = (e: any) => {
+        const addingNews = {
+            date: new Date().toString(),
+            photos: imgs,
             text: currentNews
         }
         setIsAdding(false);
-        dispatch(AddNews(news))
+        dispatch(AddNews(addingNews));
+        handleClear(e);
+        setVidgetValue('');
     }
     
-    const ourNews = news.map((elem: types.News, i: number)=>{
+    let ourNews;
+    if (news) ourNews=news.map((elem: types.News, i: number)=>{
         return (
             <div className='news-wrapper' key={i}><>
-                <div className='head-wrapper'>
-                    <h3>{elem.date.slice(0, 16)}</h3>
-                </div>
+                {isLogged && <div className='closing-cross' onClick={()=>dispatch(DeleteNews(i))}>&#10006;</div>}
+                <h3 className='news-date'>{elem.date.slice(0, 16)}</h3>
                 <p>{elem.text}</p>
                 {elem.photos.length!==0 && <Swiper className='swiper1'
                     navigation
                     id="thumbs"
                     spaceBetween={5}
-                    slidesPerView={3}
+                    slidesPerView={1}
                 >
                     {elem.photos.map((item, index: number)=> {
                         return <SwiperSlide key={`slide-${index}`} tag="li">
@@ -54,47 +66,60 @@ export const News: React.FC = () => {
             </></div>
         )
     })
-
-    const imgToBlob = (src: any)=> {
-        let img = new Image as HTMLImageElement;
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
-
-        /* img.onload = function() {
-        canvas.width = img.naturalWidth;     // update canvas size to match image
-        canvas.height = img.naturalHeight;
-        context!.drawImage(img, 0, 0);       // draw in image
-        canvas.toBlob(function(blob) {        // get content as JPEG blob
-        }, "image/jpeg", 0.75);
-        };
-        img.crossOrigin = "";              // if from different origin
-        img.src = src;
-        console.log(img); */
-    }
-    const getImages = (event:any) => {
-        const file = event.currentTarget.files[0];
-        const reader = new FileReader();
-        reader.onloadend = function() {
-                let data = reader.result as string;
-                data = data.split(',')[0];
-                const data1 = window.btoa(data);
-                const binaryBlob = atob(data1);
-                console.log(binaryBlob)
+    useEffect(()=> {
+        if (imagesUuid) {
+            let arrayOfPictures = [];
+            for (let i=0; i<+imagesUuid[imagesUuid.length-1]; i++) {
+                arrayOfPictures.push(`https://ucarecdn.com/${imagesUuid}/nth/${i}/`)
+            }
+            setImgs(arrayOfPictures)
         }
-        reader.readAsDataURL(file);
-        
-    }
+    }, [imagesUuid])
+
+    useEffect(()=> {
+        if (news.length) {    
+            fetch('https://api.jsonbin.io/v3/b/63ff2b48ebd26539d0875ca1', {
+                method: 'PUT',
+                headers: {
+                    'X-Master-Key': '$2b$10$oxBixTfm91bCooJQkMVgqe2pAnvfRW3.CENARse2lulF/f3HZB7gq',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(news)
+            })}
+    }, [news.length]);
+
+    const alterLocale = () => ({
+        buttons: {
+          choose: {
+            files: {
+              one: 'Загрузите фото',
+              other: 'Загрузите фото'
+            }
+          }
+        }
+      });
+      
         
     return <>
         {loading? <h3>Loading...</h3>
             :<> 
             {isLogged && !isAdding && <button 
-            className='submitButton' 
+            className='submit-button' 
             onClick = {()=>setIsAdding(true)}>Добавить новость</button>}
-            {<div>
-                <input className='news-input' onChange={(e)=>setCurrentNews(e.currentTarget.value)}/>
-                <input type='file' multiple accept="image/*,image/jpeg" onChange={getImages}/>
-                <button className='submitButton' disabled={currentNews===''} onClick={()=>onSubmit()}>Сохранить</button>
+            {isAdding && <div className='news-adding'>
+                <textarea className='news-input' 
+                    value={currentNews} 
+                    onChange={handleChange} 
+                    placeholder='Введите текст новости'
+                />
+                <Widget 
+                    value= {vidgetValue}
+                    publicKey="e47f57a572ecfb0df052"
+                    localeTranslations={alterLocale()} 
+                    multiple={true}
+                    onChange={fileInfo=> setImagesUuid (fileInfo.uuid)}
+                />
+                <button className='submit-button' disabled={currentNews===''} onClick={(e)=>onSubmit(e)}>Сохранить</button>
             </div>}
 
             {ourNews}

@@ -21,12 +21,13 @@ export type LogState = {
     activeUser: User | undefined,
     isLogged: boolean
 } 
+export type changingCell = [number, Keys, number, string?, number?];
 
 export type ScheduleState = {
     timetable: Classroom[],
     loading: boolean,
-    isVisible: boolean
-    changingCell: (number|Keys)[]
+    isModal: boolean
+    changingCell: changingCell|never[]
 }
 
 export type NewsState = {
@@ -58,6 +59,7 @@ export interface Classroom {
     "17-00": (Lesson|{})[],
     "18-00": (Lesson|{})[]
 }
+export type ArrayInClassroom = [Keys, (Lesson)[]];
 
 export type Keys = keyof Classroom;
 

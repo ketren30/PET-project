@@ -53,9 +53,9 @@ export const Enter = () => {
             {isLogged?
             <h3>Добро пожаловать, {loggedUser!.name +' '+ loggedUser!.lastName}</h3>
             :<div className='form'>
-                <input ref={loginInput} className='input' onChange={onLoginChange} placeholder='Введите логин'/><br/>
-                <input className='input' onChange={onPasswordChange} placeholder='Введите пароль'/><p/>
-                <button className='button' onClick={onButtonClick} disabled={!isValid}>Войти</button>
+                <input ref={loginInput} className='logging-input' onChange={onLoginChange} placeholder='Введите логин'/><br/>
+                <input className='logging-input' onChange={onPasswordChange} placeholder='Введите пароль'/><p/>
+                <button className='logging-button' onClick={onButtonClick} disabled={!isValid}>Войти</button>
                 {error!! && <h4>{error}</h4>}
             </div>}
         </div>

@@ -21,8 +21,10 @@ const newsReducer = (
         case actionTypes.hideLoading:
             return {...state, loading: false}
         case actionTypes.addNews:
-            const news1 = state.news.concat(action.payload)
+            const news1 = [action.payload].concat(state.news)
             return {...state, news: news1}
+        case actionTypes.deleteNews:
+            return {...state, news: state.news.filter((item: any, index: number)=> index!==action.payload)}
     }
     return state
 }
