@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/PET-project/static/css/main.dfee3920.css",
-    "main.js": "/PET-project/static/js/main.0aad2bbb.js",
+    "main.js": "/PET-project/static/js/main.9cbf7975.js",
     "ucare-widget-chunk.js": "/PET-project/static/js/ucare-widget-chunk.4b1bbbea.chunk.js",
     "ucare-panel-chunk.js": "/PET-project/static/js/ucare-panel-chunk.cd00b426.chunk.js",
     "static/js/294.179213b5.chunk.js": "/PET-project/static/js/294.179213b5.chunk.js",
     "index.html": "/PET-project/index.html",
     "main.dfee3920.css.map": "/PET-project/static/css/main.dfee3920.css.map",
-    "main.0aad2bbb.js.map": "/PET-project/static/js/main.0aad2bbb.js.map",
+    "main.9cbf7975.js.map": "/PET-project/static/js/main.9cbf7975.js.map",
     "ucare-widget-chunk.4b1bbbea.chunk.js.map": "/PET-project/static/js/ucare-widget-chunk.4b1bbbea.chunk.js.map",
     "ucare-panel-chunk.cd00b426.chunk.js.map": "/PET-project/static/js/ucare-panel-chunk.cd00b426.chunk.js.map",
     "294.179213b5.chunk.js.map": "/PET-project/static/js/294.179213b5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dfee3920.css",
-    "static/js/main.0aad2bbb.js"
+    "static/js/main.9cbf7975.js"
   ]
 }
