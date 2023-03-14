@@ -1,5 +1,5 @@
 import './App.css';
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Enter } from './components/enter/enter';
 import { News } from './components/news/news';
@@ -26,6 +26,9 @@ export default function App() {
   const isLogged: boolean = useSelector((state: types.MainState) => state.logging.isLogged);
   const isModal: boolean = useSelector((state: types.MainState) => state.schedule.isModal);
   const LoggedUser: types.User| undefined = useSelector((state: types.MainState) => state.logging.activeUser);
+  useEffect(()=>{
+    navigate('/')
+  }, [])
   const getClassName = (navData: any) => {
     if (navData.isActive) return 'activeMenu'
     else return 'menu'

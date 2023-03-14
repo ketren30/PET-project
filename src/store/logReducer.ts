@@ -1,60 +1,70 @@
-import { toEditorSettings } from "typescript";
 import { checkUser, logOut } from './actionTypes';
 import * as types from '../type';
 
-const userFromStorage = localStorage.getItem('user');
+const userFromStorage = localStorage.getItem('userID');
+const teachersLogins = [
+    {
+        "login": "arkadii",
+        "password": "9181632716",
+        "name": "Аркадий",
+        "lastName": "Алексеевич",
+        "id": 1,
+        "male": 'male'
+    },
+    {
+        "login": "ekaterina",
+        "password": "9002435991",
+        "name": "Екатерина",
+        "lastName": "Юрьевна",
+        "id": 2,
+        "male": 'female'
+    },
+    {
+        "login": "aleksey",
+        "password": "9817346457",
+        "name": "Алексей",
+        "lastName": "Константинович",
+        "id": 3,
+        "male": 'male'
+    },
+    {
+        "login": "evgeniya",
+        "password": "9530806270",
+        "name": "Евгения",
+        "lastName": "Александровна",
+        "id": 4,
+        "male": 'female'
+    },
+    {
+        "login": "liliya",
+        "password": "9182322272",
+        "name": "Лилия",
+        "lastName": "Владимировна",
+        "id": 5,
+        "male": 'female'
+    },
+    {
+        
+        "login": "sample",
+        "password": "sample",
+        "name": "Неизвестный",
+        "lastName": "",
+        "id": 6,
+        "male": 'male'
+    }
+];
 let activeUser;
 let isLogged;
 if (userFromStorage!==null) {
-    activeUser=JSON.parse(userFromStorage);
+    activeUser=teachersLogins.find((elem) => elem.id===+userFromStorage);
     isLogged=true;
 } else {
     activeUser=undefined;
     isLogged=false;
 }
+
 const initialState: types.LogState = {
-    users: [
-        {
-            "login": "arkadii",
-            "password": "9181632716",
-            "name": "Аркадий",
-            "lastName": "Алексеевич",
-            "id": 1,
-            "male": 'male'
-        },
-        {
-            "login": "e",
-            "password": "9",
-            "name": "Екатерина",
-            "lastName": "Юрьевна",
-            "id": 2,
-            "male": 'female'
-        },
-        {
-            "login": "aleksey",
-            "password": "9817346457",
-            "name": "Алексей",
-            "lastName": "Константинович",
-            "id": 3,
-            "male": 'male'
-        },
-        {
-            "login": "evgeniya",
-            "password": "9530806270",
-            "name": "Евгения",
-            "lastName": "Александровна",
-            "id": 4,
-            "male": 'female'
-        },
-        {
-            "login": "liliya",
-            "password": "9182322272",
-            "name": "Лилия",
-            "lastName": "Владимировна",
-            "id": 5,
-            "male": 'female'
-        }
-    ],
+    users: teachersLogins,
     activeUser: activeUser,
     isLogged: isLogged
 }
@@ -69,13 +79,13 @@ const logReducer = (
                 if (item.login===action.payload.login && item.password===action.payload.password) {
                     state.activeUser=item;
                     state.isLogged=true;
-                    localStorage.setItem('user', JSON.stringify(item));
+                    localStorage.setItem('userID', item.id.toString());
                 }
                 return item
             });
             return state
         case logOut: 
-            localStorage.removeItem('user');
+            localStorage.removeItem('userID');
             return {...state, activeUser: undefined, isLogged: false}
     }
     return state
