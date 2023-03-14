@@ -4,10 +4,10 @@ import { Dispatch } from 'redux';
 import { CheckUser } from '../../store/actionCreators';
 import * as types from '../../type';
 import {useNavigate} from 'react-router-dom';
-import './enter.css';
+import './login.css';
 
 
-export const Enter = () => {
+export const LogIn = () => {
     const [potentialUserLogin, setPotentialUserLogin] = useState<string>('');
     const [potentialUserPassword, setPotentialUserPassword] = useState<string>('');
     const [error, setError] = useState<string>('');
@@ -19,10 +19,10 @@ export const Enter = () => {
     const loggedUser: types.User | undefined = useSelector((state: types.MainState) => state.logging.activeUser);
     
     const onLoginChange = (event: React.FormEvent<HTMLInputElement>) => {
-        setPotentialUserLogin(event.currentTarget.value);
+        setPotentialUserLogin(event.currentTarget.value.toLowerCase());
     }
     const onPasswordChange = (event: React.FormEvent<HTMLInputElement>) => {
-        setPotentialUserPassword(event.currentTarget.value);
+        setPotentialUserPassword(event.currentTarget.value.toLowerCase());
     }
 
     useEffect(()=> {

@@ -1,7 +1,7 @@
 import './App.css';
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Enter } from './components/enter/enter';
+import { LogIn } from './components/login/login';
 import { News } from './components/news/news';
 import { Schedule } from './components/schedule/schedule';
 import { Teachers } from './components/teachers/teachers';
@@ -111,7 +111,7 @@ const getMenu = useMemo(() => {
             <Route path='/teachers' element={<Teachers/>} />
             <Route path='/schedule' element={<Schedule/>} />
             <Route path='/news' element={<News/>} />
-            <Route path='/enter' element={<Enter/>} />
+            <Route path='/enter' element={<LogIn/>} />
           </Routes>
           </>
         </div>
