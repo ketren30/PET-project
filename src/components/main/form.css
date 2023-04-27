@@ -1,0 +1,31 @@
+.call-form {
+    width: 50%;
+    border: 2px solid rgb(51, 238, 176);
+    border-radius: 20px;
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    justify-content: space-around;
+}
+.call-form .main-button {
+    background: linear-gradient(rgb(252, 220, 77), rgb(247, 228, 146), rgb(252, 220, 77));
+    margin: 0;
+}
+.call-form .main-input {
+    margin: 0;
+    width: 80%;
+}
+.call-form .main-input::placeholder {
+    color: rgb(150, 148, 148);
+}
+
+@media (width<768px){
+    .call-form {
+        width: 90%;
+    }
+    .call-form .main-button {
+        font-size: 12px;
+        width: 80%;
+    }
+}

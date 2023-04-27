@@ -25,7 +25,7 @@
     opacity : 0.3;
     z-index: -1;
 }
-.logging-button {
+.main-button {
     width: 220px;
     font-size: 1.2vw;
     font-family: 'Montserrat', sans-serif;
@@ -40,13 +40,13 @@
     font-weight: 600;
     margin-top: 40px;
 }
-.logging-button:disabled {
+.main-button:disabled {
     background: linear-gradient(#f3ab9e, #f8cec7, #f3ab9e); 
     color: rgb(126, 123, 123);
 }
-.logging-input, .logging-input:focus {
+.main-input, .main-input:focus {
     border: none;
-    height: 45px;
+    height: 40px;
     width: 200px;
     outline: none;
     border-radius: 10px;
@@ -58,11 +58,26 @@
     text-align: center;
 }
 
-.logging-input::placeholder {
+.main-input::placeholder {
     font-size: 1vw;
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
     color: rgb(24, 24, 24);
+}
+
+@media (width<768px) {
+    .main-input::placeholder {
+        font-size: 9px;
+        color:rgb(170, 167, 167)
+    }
+    .main-input, .main-input:focus {
+        font-size: 10px;
+    }
+}
+@media (width<572px) {
+    .main-button {
+        font-size: 11px;
+    }
 }

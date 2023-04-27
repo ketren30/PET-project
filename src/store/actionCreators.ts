@@ -134,3 +134,18 @@ export const DeleteNews = (index: number) => {
     }
     return action
 }
+
+export const ChangeVersion = (bool: boolean) => {
+    const action: types.MainAction = {
+        type: actionTypes.changeVersion,
+        payload: bool
+    }
+    return action
+}
+export const ChangeWidth = (width: number) => {
+    const action: types.MainAction = {
+        type: actionTypes.changeWidth,
+        payload: width
+    }
+    return action
+}

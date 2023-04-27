@@ -1,5 +1,141 @@
-
+.left-margin {
+    align-self: flex-start;
+    width: 400px;
+    margin: 50px 0 0 110px;
+}
+.left-margin h1 {
+    font-size: 45px;
+    color: rgb(32, 182, 228);
+}
+.left-margin h4 {
+    font-size: 25px;
+    color: rgb(4, 226, 189);
+}
 .pic-background {
     width: 100%;
     height: 60%;
+}
+.mobile-img {
+    width: 100%;
+}
+.application-wrapper {
+    margin-top: 50px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons {
+    align-self: flex-start;
+}
+.call-form-button, .call-form-button-dis {
+    background-color: rgb(52, 253, 186);
+    border: none;
+    border-radius: 15px 15px 0 0;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    padding: 0 20px;
+}
+.call-form-button-dis {
+    background: linear-gradient(rgb(153, 152, 152), rgb(187, 187, 187));
+}
+.call-form-button-dis:hover {
+    background: linear-gradient(rgb(87, 86, 86), rgb(148, 147, 147));
+}
+.application-form {
+    display: flex;
+    align-content: space-around;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 450px;
+    background-color: rgb(52, 253, 186);
+    border-radius: 0 20px 20px 20px;
+}
+
+.describing {
+    width: 40%;
+    height: 85%;
+    color: white;
+    font-size: 45px;
+    display: flex;
+    align-items: center;
+}
+.application-form h6 {
+    color: white;
+    font-size: 10px;
+    margin: 0 15px;
+    text-align: center;
+}
+
+@media (max-width: 992px) {
+    .describing p {
+        font-size: 4.5vw;
+    }
+    .left-margin {
+        margin-top: 0;
+    }
+    .application-wrapper {
+        margin-top: 20px;
+    }
+}
+ @media (max-width: 768px) {
+    .left-margin {
+        margin-left: 20px;
+        width: fit-content;
+    }
+    .left-margin h1 {
+        font-size: 4.5vw;
+        width: 40%;
+    }
+    .left-margin h4 {
+        font-size: 2.5vw;
+    }
+    .application-wrapper {
+        margin-top: 30px;
+    }
+    .abs-img {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        height: 90%;
+        transform: translate(-32%);
+    }
+    .application-form h6 {
+        font-size: 1.5vw;
+    }
+    
+}
+.background-picture {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    background-image: url('https://ucarecdn.com/b2be70bf-0dfb-46f6-a30e-ab07247edc1b/Untitled_design__20.png');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    top: 0;
+}
+@media (max-width: 576px) {
+    .abs-img {
+        transform: translate(-45%);
+    }
+    .left-margin h1 {
+        font-size: 6.5vw;
+        width: 80%;
+        color: rgb(24, 143, 179);
+    }
+    .left-margin h4 {
+        font-size: 5vw;
+        color:rgb(10, 163, 10);
+    }
+    .left-margin {
+        margin-top: 20px;
+    }
 }

@@ -19,10 +19,10 @@ export const LogIn = () => {
     const loggedUser: types.User | undefined = useSelector((state: types.MainState) => state.logging.activeUser);
     
     const onLoginChange = (event: React.FormEvent<HTMLInputElement>) => {
-        setPotentialUserLogin(event.currentTarget.value.toLowerCase());
+        setPotentialUserLogin(event.currentTarget.value.toLowerCase().trim());
     }
     const onPasswordChange = (event: React.FormEvent<HTMLInputElement>) => {
-        setPotentialUserPassword(event.currentTarget.value.toLowerCase());
+        setPotentialUserPassword(event.currentTarget.value.toLowerCase().trim());
     }
 
     useEffect(()=> {
@@ -53,9 +53,9 @@ export const LogIn = () => {
             {isLogged?
             <h3>Добро пожаловать, {loggedUser!.name +' '+ loggedUser!.lastName}</h3>
             :<div className='form'>
-                <input ref={loginInput} className='logging-input' onChange={onLoginChange} placeholder='Введите логин'/><br/>
-                <input className='logging-input' onChange={onPasswordChange} placeholder='Введите пароль'/><p/>
-                <button className='logging-button' onClick={onButtonClick} disabled={!isValid}>Войти</button>
+                <input ref={loginInput} className='main-input' onChange={onLoginChange} placeholder='Введите логин'/><br/>
+                <input className='main-input' onChange={onPasswordChange} placeholder='Введите пароль'/><p/>
+                <button className='main-button' onClick={onButtonClick} disabled={!isValid}>Войти</button>
                 {error!! && <h4>{error}</h4>}
             </div>}
         </div>

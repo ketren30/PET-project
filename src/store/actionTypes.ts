@@ -12,4 +12,6 @@ export const fetchNews = "fetchNews";
 export const addNews = 'addNews';
 export const deleteNews = 'deleteNews';
 export const deleteLesson = 'deleteLesson';
-export const changeVisibility = 'changeVisibility'
+export const changeVisibility = 'changeVisibility';
+export const changeVersion = 'changeVersion';
+export const changeWidth = 'changeWidth';

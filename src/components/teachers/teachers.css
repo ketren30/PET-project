@@ -1,3 +1,5 @@
+
+
 .teachers .swiper-container {
     width: 500px;
 }
@@ -9,11 +11,12 @@
 
 .teachers .swiper-wrapper {
     padding-inline-start: 0;
-    width: 700px;
+    width: 95%;
 }
+
 .teachers .swiper {
-    width: 800px;
-    height: 680px;
+    width: 730px;
+    height: 675px;
     background-color: #a7c0cd8e;
     border-radius: 30px;
     margin-top: 30px;
@@ -22,19 +25,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .picture {
     width: 700px;
     list-style: none;
+    border-radius: 20px;
 }
 .description {
     width: 700px;
     text-align: justify;
     text-transform: none;
     font-size: 13px;
+    display: flex;
 }
 .header {
-    margin: 0;
+    margin: 0 0 -14px 0;
     font-size: 18px;
 }
 .pink-back {
@@ -55,9 +61,67 @@
 .text-around {
     width: 45%;
     height: 220px;
-    align-self: flex-start; 
     font-size: 1.25vw;
 }
 .center-block {
     width: 70%;
+}
+
+@media (max-width: 992px) {
+    .pink-back {
+        height: 140px;
+    }
+}
+@media (max-width: 768px) {
+    .teachers .swiper {
+        width: 95em;
+        height: fit-content;
+    }
+    .teachers .swiper-slide {
+        height: fit-content;
+    }
+    .picture {
+        width: 90em;
+        height: fit-content;
+    }
+    .description {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .header {
+        height: fit-content;
+        text-align: center;
+    }
+    .absolute-picture {
+        width: 45%;
+        left: 50%;
+        top: -25px;
+    }
+    .text-around {
+        font-size: 1.45em;
+    }
+    .pink-back {
+        padding: 20px;
+    }
+}
+@media (max-width: 576px) {
+    .teachers .swiper-button-prev, .teachers .swiper-button-next {
+        top: 30%;
+    }
+    .text-around {
+        width: 100%;
+        font-size: 2.4em;
+        height: fit-content;
+    }
+    .float-right {
+        float: right;
+        width: 45%;
+        border-radius: 15px;
+        margin-top: -30px;
+    }
+    .pink-back {
+        padding: 10px;
+        height: fit-content;
+        margin-top: 40px;
+    }
 }

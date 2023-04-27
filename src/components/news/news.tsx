@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as types from '../../type';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -20,6 +20,7 @@ export const News: React.FC = () => {
     const [imgs, setImgs] = useState<string[]>([]);
     const [imagesUuid, setImagesUuid] = useState<string|null>('');
     const [vidgetValue, setVidgetValue] = useState<string>();
+    const textareaRef = useRef<HTMLTextAreaElement>(null);
     
     useEffect(()=> {
         dispatch(FetchNews());
@@ -88,6 +89,12 @@ export const News: React.FC = () => {
             })}
     }, [news.length]);
 
+    useEffect(() => {
+        if (textareaRef.current) {textareaRef.current.style.height = "0px";
+        const scrollHeight = textareaRef.current.scrollHeight;
+        textareaRef.current.style.height = scrollHeight + "px";}
+    }, [currentNews]);
+
     const alterLocale = () => ({
         buttons: {
           choose: {
@@ -107,7 +114,8 @@ export const News: React.FC = () => {
             className='submit-button' 
             onClick = {()=>setIsAdding(true)}>Добавить новость</button>}
             {isAdding && <div className='news-adding'>
-                <textarea className='news-input' 
+                <textarea className='news-input'
+                    ref={textareaRef} 
                     value={currentNews} 
                     onChange={handleChange} 
                     placeholder='Введите текст новости'

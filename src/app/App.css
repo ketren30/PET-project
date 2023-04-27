@@ -1,0 +1,234 @@
+.modal-open {
+    height: 100vh;
+    overflow-y: hidden;
+    padding-right: 30px;
+}
+.app {
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    font-size: 1vw;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #524f4e;
+    
+    
+}
+.app h1 {
+    color: #f0604d;
+    margin: 15px 0 12px 10px;
+    font-size: 18px;
+}
+.app h4 {
+    color: #506CF0;
+    margin: 12px 0 0 10px;
+}
+.app h2 {
+    margin: 0 0 12px 10px;
+}
+
+.main {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.flex-space-between, .flex-space-between-fit {
+    display: flex; 
+    justify-content: space-between;
+    width: 100%;
+}
+.flex-space-between {
+    margin-top: 5px;
+}
+.flex-space-between-fit {
+    width: fit-content;
+    align-items: center;
+}
+.pic-logo {
+    width: 55px;
+    height: 45px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.line, .line-margin {
+    background-color: #A7C0CD;
+    width: 100%;
+    height: 1px;
+}
+.menu-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.menu, .activeMenu {
+    text-decoration: none;
+    color: rgb(21, 179, 126);
+    font-weight: 1000;
+    font-size: 19px;
+    text-shadow: 1px 1px 2px white;
+    white-space: nowrap;
+    margin: 10px 0;
+    padding: 1%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.menu:hover {
+    color: rgb(8, 102, 71);
+}
+.activeMenu {
+    color: #373738;
+    font-weight: 1000;
+}
+.loggedUser {
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    font-size: 1vw;
+    align-items: center;
+    margin: 12px 0;
+    cursor: default;
+}
+.big-right-margin {
+    display: flex;
+    margin-right: 2%;
+    width: fit-content;
+    align-items: center;
+}
+.pic-icon, .log-out {
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    align-self: center;
+    margin: 2px
+}
+.log-out {
+    cursor: pointer;
+}
+.log-out:hover {
+    width: 37px;
+    height: 37px;
+}
+.image-wrapper {
+    width: 5%;
+    display: flex;
+    align-items: center;
+}
+
+.footer {
+    flex-shrink: 0;
+    width: 100%;
+}
+.line-margin {
+    margin-top: 10px;
+}
+.inline {
+    display: flex;
+    text-transform: none;
+    height: 40px;
+    padding-left: 50px;
+    font-size: 1.2em;
+}
+.logos {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin: 10px 0 0 10px;
+}
+.blue-backgound {
+    height: 45px;
+    background-color: #34eea728;
+    line-height: 45px;
+    border-radius: 3px;
+    padding-left: 40px;
+    font-size: 1.2em;
+}
+.app-close {
+    width: 40px;
+    font-size: larger;
+    text-align: center;
+    cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+    .menu, .activeMenu {
+        font-size: 1.18vw;
+    }
+}
+@media (max-width: 992px) {
+    .menu-wrapper {
+        background-color: white;
+        position: fixed;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-start;
+        width: 100%;
+        height: 100%;
+    }
+    .menu-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 30px;
+        color: black;
+        cursor: pointer;
+    }
+    .flex-space-between-fit h2 {
+        font-size: 1em;
+        color: rgb(75, 74, 74);
+    }
+    .font-1em {
+        font-size: 1em;
+        color: rgb(247, 45, 79);
+    }
+    .font-16px {
+        font-size: 16px;
+        color: rgb(247, 45, 79);
+    }
+    .menu {
+        color: rgb(75, 74, 74);
+        border-bottom: 1px solid rgb(207, 205, 205);
+        font-size: 17px;
+        font-weight: 600;
+        margin: 0 15px;
+        height: 35px;
+    }
+    .menu:hover {
+        color: black;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    .app {
+        background-image: none;
+        background-size: cover;
+        background-position: 50%;
+    }
+    .pic-logo {
+        width: 30px;
+        height: auto;
+    }
+    .flex-space-between-fit {
+        height: 40px;
+        margin: 5px;
+    }
+    
+    .inline, .blue-backgound {
+        font-size: 2em;
+    }
+}
+@media (max-width: 450px) {
+    .inline, .blue-backgound {
+        font-size: 2.5em;
+    }
+}

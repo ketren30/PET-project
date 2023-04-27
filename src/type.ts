@@ -13,7 +13,8 @@ export interface User {
 export interface MainState {
     logging: LogState,
     schedule: ScheduleState,
-    news: NewsState
+    news: NewsState,
+    version: VersionState
 }
 
 export type LogState = {
@@ -48,16 +49,16 @@ export interface Lesson {
 }
 
 export interface Classroom {
-    '09-00': (Lesson|{})[],
-    '10-00': (Lesson|{})[],
-    '11-00': (Lesson|{})[],
-    "12-00": (Lesson|{})[],
-    "13-00": (Lesson|{})[],
-    "14-00": (Lesson|{})[],
-    "15-00": (Lesson|{})[],
-    "16-00": (Lesson|{})[],
-    "17-00": (Lesson|{})[],
-    "18-00": (Lesson|{})[]
+    '9 a.m.': (Lesson|{})[],
+    '10 a.m.': (Lesson|{})[],
+    '11 a.m.': (Lesson|{})[],
+    "12 p.m.": (Lesson|{})[],
+    "1 p.m.": (Lesson|{})[],
+    "2 p.m.": (Lesson|{})[],
+    "3 p.m.": (Lesson|{})[],
+    "4 p.m.": (Lesson|{})[],
+    "5 p.m.": (Lesson|{})[],
+    "6 p.m.": (Lesson|{})[]
 }
 export type ArrayInClassroom = [Keys, (Lesson)[]];
 
@@ -68,7 +69,10 @@ export interface News {
     photos: string[],
     text: string
 }
-
+export type VersionState = {
+    isMobile: boolean,
+    width: number
+}
 type thunkAction = (thunk: (dispath: DispatchType) => void | Promise<void>) => void;
 type standartAction = (args: MainAction) => MainAction;
 

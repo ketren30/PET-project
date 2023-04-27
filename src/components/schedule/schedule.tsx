@@ -14,15 +14,11 @@ export const Schedule: React.FC = () => {
     const changingCell = useSelector((state: types.MainState)=> state.schedule.changingCell);
     const loading = useSelector((state: types.MainState)=> state.schedule.loading);
     const timetable = useSelector((state: types.MainState)=> state.schedule.timetable);
-    const isModal = useSelector((state: types.MainState)=> state.schedule.isModal);
+    const isMobile = useSelector((state: types.MainState)=> state.version.isMobile);
     const [x, setX] = useState<number>(0);
     const [y, setY] = useState<number>(0);
     const [isChanged, setIsChanged] = useState(false);
       
-    
-    useEffect(()=> {
-        console.log(isModal)
-    }, [isModal])
     const onCellClick = (array: types.changingCell) => {
         dispatch(ChooseCell(array))
         if (isLogged && activeUser?.name==="Екатерина") {
@@ -57,27 +53,28 @@ export const Schedule: React.FC = () => {
                 },
                 body: JSON.stringify(timetable)
         });
-        
+    }
+    const getInitials = (name: string) => {
+        return `${name.split(' ')[0][0]}. ${name.split(' ')[1][0]}.`
     }
     
-let entries;
 
     return <>
         {x!==0 && <Modal x={x} y={y} onSubmitClick = {onScheduleChanges} />}
-        <div onClick={(e)=>onCoordinateChange(e.pageX, e.clientY)}>
+        <div onClick={(e)=>onCoordinateChange(e.pageX, e.clientY)} className='table-wrapper'>
             {loading && <h3>Loading...</h3>}
             {isChanged && isLogged && <button onClick={onSavingClick} className='submitButton'>Сохранить изменения</button>}
             {!loading && timetable.length && 
                 <table className='schedule-table'>
                     <thead className='table-title'>
                         <tr>
-                            <th>Time</th>
-                            <th>Monday</th>
-                            <th>Tuesday</th>
-                            <th>Wednesday</th>
-                            <th>Thursday</th>
-                            <th>Friday</th>
-                            <th>Saturday</th>
+                            <th className='week-days'>{!isMobile && 'Time'}</th>
+                            <th className='week-days'>{isMobile? 'Mon': 'Monday'}</th>
+                            <th className='week-days'>{isMobile? 'Tue': 'Tuesday'}</th>
+                            <th className='week-days'>{isMobile? 'Wed': 'Wednesday'}</th>
+                            <th className='week-days'>{isMobile? 'Thu': 'Thursday'}</th>
+                            <th className='week-days'>{isMobile? 'Fri': 'Friday'}</th>
+                            <th className='week-days'>{isMobile? 'Sat': 'Saturday'}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -89,16 +86,21 @@ let entries;
                                 {(Object.entries(item) as types.ArrayInClassroom[]).map((elem) => {
                                     return (
                                         <tr>
-                                            <td className='side-header'>{elem[0]}</td>
+                                            <th className='side-header'>{elem[0]}</th>
                                             {elem[1].map((lesson: types.Lesson, ind: number)=>{
                                                 if (Object.keys(lesson).length)
                                                 return <td 
                                                 className={handleClassName(lesson.teacher, lesson.groupID)} 
                                                 key={ind} 
                                                 onClick={()=>onCellClick([index, elem[0], ind, lesson.teacher, lesson.groupID])}>
-                                                    <span className='bold-blue'>Учитель: </span> {lesson.teacher}<br/>
-                                                    <span className='bold-green'>Уровень: </span>{lesson.level}<br/>
-                                                    <span className='bold-red'>Ученики: </span>{lesson.numberOfStudents}<br/>
+                                                    {!isMobile && <span className='bold-blue'>Учитель: </span>} 
+                                                    {isMobile? <span className='bold-blue'>{getInitials(lesson.teacher)}</span>:<span>{lesson.teacher}</span>}
+                                                    <br/>
+                                                    {!isMobile && <span className='bold-green'>Уровень: </span>} 
+                                                    {isMobile? <span className='bold-green'>{lesson.level}</span>:<span>{lesson.level}</span>}
+                                                    <br/>
+                                                    {!isMobile && <span className='bold-red'>Ученики: </span>} 
+                                                    {isMobile? <span className='bold-red'>{lesson.numberOfStudents} чел.</span>:<span>{lesson.numberOfStudents}</span>}
                                                     </td>
                                                 else return <td 
                                                 className={handleClassName()} 

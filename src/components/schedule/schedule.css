@@ -1,24 +1,27 @@
-
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+}
 .schedule-table {
     font-size: 13px;
     border: 1px solid #524f4e;
     border-collapse: collapse;
     table-layout: fixed;
-    width: 105%;
+    width: 95%;
     text-transform: none;
     font-weight: 300;
-    margin-left: -2%;
 }
-.schedule-table th:nth-child(1) {
-    width: 5%
+.week-days:nth-child(1) {
+    width: 7%
 }
-.schedule-table th:nth-child(n+2) {
+.week-days:nth-child(n+2) {
     width: 16%;
 }
 .schedule-table th, td, .active-td {
     border: 1px solid #524f4e;
     text-align: center;
     cursor: default;
+    word-wrap: break-word;
 }
 .bold-blue, .bold-green, .bold-red {
     font-weight: 600;
@@ -43,7 +46,32 @@
 .table-title {
     position: sticky;
     top: 0;
+    z-index: 0;
+    background-color: white;
 }
 .active-cell {
     background-color: #fdb5a88f;
+}
+
+@media (max-width: 768px) {
+    .schedule-table th, td, .active-td {
+        letter-spacing: normal;
+    } 
+    .schedule-table {
+        width: 100%;
+    }
+    .side-header {
+        word-wrap: normal;
+        font-size: small;
+    }
+    .week-days:nth-child(1) {
+        width: 10%;
+        font-size: small;
+    }
+    .week-days:nth-child(n+2) {
+        width: 15%;
+    }
+    .table-wrapper h3 {
+        font-size: 3em;
+    }
 }
