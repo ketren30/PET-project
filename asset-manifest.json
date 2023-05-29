@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/PET-project/static/css/main.c2575e4b.css",
-    "main.js": "/PET-project/static/js/main.7d5b6f99.js",
+    "main.css": "/PET-project/static/css/main.86dfb095.css",
+    "main.js": "/PET-project/static/js/main.bfac8345.js",
     "ucare-widget-chunk.js": "/PET-project/static/js/ucare-widget-chunk.4b1bbbea.chunk.js",
     "ucare-panel-chunk.js": "/PET-project/static/js/ucare-panel-chunk.cd00b426.chunk.js",
     "static/js/294.179213b5.chunk.js": "/PET-project/static/js/294.179213b5.chunk.js",
     "static/media/flag.png": "/PET-project/static/media/flag.5e39f83f944dfb3c223b.png",
     "index.html": "/PET-project/index.html",
-    "main.c2575e4b.css.map": "/PET-project/static/css/main.c2575e4b.css.map",
-    "main.7d5b6f99.js.map": "/PET-project/static/js/main.7d5b6f99.js.map",
+    "main.86dfb095.css.map": "/PET-project/static/css/main.86dfb095.css.map",
+    "main.bfac8345.js.map": "/PET-project/static/js/main.bfac8345.js.map",
     "ucare-widget-chunk.4b1bbbea.chunk.js.map": "/PET-project/static/js/ucare-widget-chunk.4b1bbbea.chunk.js.map",
     "ucare-panel-chunk.cd00b426.chunk.js.map": "/PET-project/static/js/ucare-panel-chunk.cd00b426.chunk.js.map",
     "294.179213b5.chunk.js.map": "/PET-project/static/js/294.179213b5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c2575e4b.css",
-    "static/js/main.7d5b6f99.js"
+    "static/css/main.86dfb095.css",
+    "static/js/main.bfac8345.js"
   ]
 }
