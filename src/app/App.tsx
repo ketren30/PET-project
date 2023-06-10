@@ -31,7 +31,7 @@ export default function App() {
   const LoggedUser = useSelector((state: types.MainState) => state.logging.activeUser)
   const { width } = useResize();
   const [isMenu, setIsMenu] = useState(false);
-  
+  const loc = useLocation();
   
   useEffect(() => {
       dispatch(ChangeWidth(width))
@@ -58,7 +58,7 @@ export default function App() {
 
   const getMenu = () => {
 
-    let loc = useLocation();
+    
     const getClassName = (navData: any) => {
         if (loc.pathname==='/') {
           return navData.isActive? 'mainPageMenu-active':'mainPageMenu'

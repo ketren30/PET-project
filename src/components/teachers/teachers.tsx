@@ -64,11 +64,6 @@ export const Teachers: React.FC = () => {
           pagination
           spaceBetween={0}
           slidesPerView={1}
-          onInit={(swiper) => console.log('Swiper initialized!', swiper)}
-          onSlideChange={(swiper) => {
-            console.log('Slide index changed to: ', swiper.activeIndex);
-          }}
-          onReachEnd={() => console.log('Swiper end reached')}
         >
         {slides}
         </Swiper>
