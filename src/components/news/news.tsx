@@ -11,7 +11,7 @@ import './news.css';
 SwiperCore.use([Navigation, Pagination, Controller, Thumbs]);
 
 export const News: React.FC = () => {
-    const isLogged = useSelector ((state: types.MainState) => state.logging.isLogged);
+    const isSmbdLogged = useSelector ((state: types.MainState) => state.logging.isSmbdLogged);
     const dispatch: ThunkDispatch<{}, void, types.MainAction> = useDispatch();
     const news = useSelector((state: types.MainState) => state.news.news);
     const loading = useSelector((state: types.MainState) => state.news.loading);
@@ -50,7 +50,7 @@ export const News: React.FC = () => {
     if (news) ourNews=news.map((elem: types.News, i: number)=>{
         return (
             <div className='news-wrapper' key={i}><>
-                {isLogged && <div className='closing-cross' onClick={()=>dispatch(DeleteNews(i))}>&#10006;</div>}
+                {isSmbdLogged && <div className='closing-cross' onClick={()=>dispatch(DeleteNews(i))}>&#10006;</div>}
                 <h3 className='news-date'>{elem.date.slice(0, 16)}</h3>
                 <p>{elem.text}</p>
                 {elem.photos.length!==0 && <Swiper className='swiper1'
@@ -108,9 +108,9 @@ export const News: React.FC = () => {
       
         
     return <>
-        {loading? <h3>Loading...</h3>
+        {loading? <h3 className='loading'>Loading...</h3>
             :<> 
-            {isLogged && !isAdding && <button 
+            {isSmbdLogged && !isAdding && <button 
             className='submit-button' 
             onClick = {()=>setIsAdding(true)}>Добавить новость</button>}
             {isAdding && <div className='news-adding'>

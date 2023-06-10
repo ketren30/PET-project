@@ -104,6 +104,8 @@
     transition: .3s;
     height: 30px;
     line-height: 30px;
+    width: fit-content;
+    margin: 10px;
 }
 .delete-button {
     background: rgb(252, 221, 226);

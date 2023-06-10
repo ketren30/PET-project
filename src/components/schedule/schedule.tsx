@@ -9,7 +9,7 @@ import { Modal } from './modal/modal';
 
 export const Schedule: React.FC = () => {
     const dispatch: ThunkDispatch<{}, void, types.MainAction> = useDispatch();
-    const isLogged = useSelector((state: types.MainState)=> state.logging.isLogged);
+    const isSmbdLogged = useSelector((state: types.MainState)=> state.logging.isSmbdLogged);
     const activeUser = useSelector((state: types.MainState)=> state.logging.activeUser);
     const changingCell = useSelector((state: types.MainState)=> state.schedule.changingCell);
     const loading = useSelector((state: types.MainState)=> state.schedule.loading);
@@ -21,7 +21,7 @@ export const Schedule: React.FC = () => {
       
     const onCellClick = (array: types.changingCell) => {
         dispatch(ChooseCell(array))
-        if (isLogged && activeUser?.name==="Екатерина") {
+        if (isSmbdLogged && activeUser?.name==="Екатерина") {
         dispatch(ShowModal());
         } 
     }
@@ -62,8 +62,8 @@ export const Schedule: React.FC = () => {
     return <>
         {x!==0 && <Modal x={x} y={y} onSubmitClick = {onScheduleChanges} />}
         <div onClick={(e)=>onCoordinateChange(e.pageX, e.clientY)} className='table-wrapper'>
-            {loading && <h3>Loading...</h3>}
-            {isChanged && isLogged && <button onClick={onSavingClick} className='submitButton'>Сохранить изменения</button>}
+            {loading && <h3 className='loading'>Loading...</h3>}
+            {isChanged && isSmbdLogged && <button onClick={onSavingClick} className='submitButton'>Сохранить изменения</button>}
             {!loading && timetable.length && 
                 <table className='schedule-table'>
                     <thead className='table-title'>
@@ -104,6 +104,7 @@ export const Schedule: React.FC = () => {
                                                     </td>
                                                 else return <td 
                                                 className={handleClassName()} 
+                                                key={ind}
                                                 onClick={()=>onCellClick([index, elem[0], ind])}/>    
                                             })}
                                         </tr>

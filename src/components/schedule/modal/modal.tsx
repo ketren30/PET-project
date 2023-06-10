@@ -104,6 +104,7 @@ export const Modal: React.FC<Props> = ({x, y, onSubmitClick}) => {
                 <div className="flex-space">   
                     <span>Код группы:</span>
                     <input 
+                        type="number"
                         className="modalInput" 
                         onChange={onIDChange} 
                         onBlurCapture={()=>setIsDirty(true)} 

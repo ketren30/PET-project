@@ -2,15 +2,11 @@ import React from 'react';
 import { useState } from 'react';
 import './main.css';
 import { useSelector } from 'react-redux';
-import EmailContactForm from './form';
+import EmailContactForm from './application-form/form';
 import { MainState } from '../../type';
 
-type Props = {
-    height: number
-}
 
-
-export const Main: React.FC<Props> = ({height}) => {
+export const Main: React.FC = () => {
     const isMobile = useSelector((state: MainState)=> state.version.isMobile);
     const [isForAdults, setIsForAdults] = useState(false);
     
@@ -29,11 +25,7 @@ export const Main: React.FC<Props> = ({height}) => {
             </div>
 
             <div className='application-wrapper'>
-                {isMobile && <img 
-                    style={{height: height}} 
-                    src='https://ucarecdn.com/b2be70bf-0dfb-46f6-a30e-ab07247edc1b/Untitled_design__20.png' 
-                    className='abs-img'
-                />}
+                
                 <div className='buttons'>
                     <button     
                         onClick={()=>setIsForAdults(false)} 

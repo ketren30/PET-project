@@ -1,6 +1,7 @@
 import * as actionTypes from './actionTypes';
 import * as types from '../type';
 import {Dispatch} from 'redux';
+import { act } from '@testing-library/react';
 
 export const CheckUser = (user: types.PotUser) => {
     const action: types.MainAction = {

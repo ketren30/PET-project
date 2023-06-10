@@ -80,4 +80,7 @@
     .main-button {
         font-size: 11px;
     }
+    .logging-wrapper h3 {
+        font-size: 3em;
+    }
 }

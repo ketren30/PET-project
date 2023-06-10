@@ -5,6 +5,7 @@
 }
 .app {
     width: 100%;
+    height: 100vh;
     position: relative;
     margin-left: auto;
     margin-right: auto;
@@ -17,24 +18,22 @@
     letter-spacing: 2px;
     font-weight: 600;
     color: #524f4e;
-    
-    
 }
 .app h1 {
-    color: #f0604d;
+    color: #A41F00	;
     margin: 15px 0 12px 10px;
     font-size: 18px;
 }
 .app h4 {
-    color: #506CF0;
+    color: #004867;
     margin: 12px 0 0 10px;
 }
 .app h2 {
     margin: 0 0 12px 10px;
 }
 
-.main {
-    flex: 1;
+.middle {
+    flex: 1 0 auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -59,7 +58,7 @@
     margin-left: 10px;
 }
 .line, .line-margin {
-    background-color: #A7C0CD;
+    background-color: #35A0CF;
     width: 100%;
     height: 1px;
 }
@@ -68,12 +67,11 @@
     display: flex;
     justify-content: space-between;
 }
-.menu, .activeMenu {
+.mainPageMenu, .mainPageMenu-active, .menu, .menu-active {
     text-decoration: none;
-    color: rgb(21, 179, 126);
-    font-weight: 1000;
+    color: #FED672	;
+    font-weight: 500;
     font-size: 19px;
-    text-shadow: 1px 1px 2px white;
     white-space: nowrap;
     margin: 10px 0;
     padding: 1%;
@@ -82,10 +80,22 @@
     align-items: center;
 }
 .menu:hover {
-    color: rgb(8, 102, 71);
+    font-weight: 1000;
+    color: #016F9F;
 }
-.activeMenu {
-    color: #373738;
+.mainPageMenu:hover {
+    font-weight: 1000;
+    color: #FEC83F	;
+}
+.mainPageMenu-active {
+    color: #FCB500;
+    font-weight: 1000;
+}
+.menu {
+    color: #1E5C77;
+}
+.menu-active {
+    color: #004867;
     font-weight: 1000;
 }
 .loggedUser {
@@ -99,7 +109,7 @@
 }
 .big-right-margin {
     display: flex;
-    margin-right: 2%;
+    margin-right: 1%;
     width: fit-content;
     align-items: center;
 }
@@ -124,7 +134,7 @@
 }
 
 .footer {
-    flex-shrink: 0;
+    flex: 0 0 auto;
     width: 100%;
 }
 .line-margin {
@@ -145,7 +155,7 @@
 }
 .blue-backgound {
     height: 45px;
-    background-color: #34eea728;
+    background-color: #5eadcfb6;
     line-height: 45px;
     border-radius: 3px;
     padding-left: 40px;
@@ -159,7 +169,7 @@
 }
 
 @media (max-width: 1250px) {
-    .menu, .activeMenu {
+    .menu, .menu-active, .mainPageMenu, .mainPageMenu-active {
         font-size: 1.18vw;
     }
 }
@@ -210,6 +220,7 @@
 @media (max-width: 767px) {
     
     .app {
+        width: 98%;
         background-image: none;
         background-size: cover;
         background-position: 50%;

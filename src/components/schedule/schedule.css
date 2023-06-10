@@ -1,6 +1,7 @@
 .table-wrapper {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 .schedule-table {
     font-size: 13px;
@@ -71,7 +72,7 @@
     .week-days:nth-child(n+2) {
         width: 15%;
     }
-    .table-wrapper h3 {
-        font-size: 3em;
+    .loading {
+        font-size: 2.2em;
     }
 }

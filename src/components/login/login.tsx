@@ -15,7 +15,7 @@ export const LogIn = () => {
     const loginInput = useRef<HTMLInputElement>(null);
     const dispatch: Dispatch<any> = useDispatch();
     const navigate = useNavigate();
-    const isLogged: boolean = useSelector((state: types.MainState)=> state.logging.isLogged);
+    const isSmbdLogged: boolean = useSelector((state: types.MainState)=> state.logging.isSmbdLogged);
     const loggedUser: types.User | undefined = useSelector((state: types.MainState) => state.logging.activeUser);
     
     const onLoginChange = (event: React.FormEvent<HTMLInputElement>) => {
@@ -26,8 +26,8 @@ export const LogIn = () => {
     }
 
     useEffect(()=> {
-        if (isLogged) setTimeout(()=> navigate('/'), 1500);
-    }, [isLogged]);
+        if (isSmbdLogged) setTimeout(()=> navigate(`${process.env.PUBLIC_URL}/`), 1500);
+    }, [isSmbdLogged]);
 
     useEffect(()=> {
         if (potentialUserLogin && potentialUserPassword) setIsValid(true)
@@ -40,7 +40,7 @@ export const LogIn = () => {
 
     const onButtonClick = () => {
         dispatch(CheckUser({login: potentialUserLogin, password: potentialUserPassword}));
-        if (!isLogged) {
+        if (!isSmbdLogged) {
             setError("Логин или пароль неверны! Попытайтесь еще раз.")
             setTimeout(()=> {
                 setError('')
@@ -50,11 +50,11 @@ export const LogIn = () => {
     
     return (
         <div className='logging-wrapper'>
-            {isLogged?
-            <h3>Добро пожаловать, {loggedUser!.name +' '+ loggedUser!.lastName}</h3>
+            {isSmbdLogged?
+            <h3 className='loading'>Добро пожаловать, {loggedUser!.name +' '+ loggedUser!.lastName}</h3>
             :<div className='form'>
                 <input ref={loginInput} className='main-input' onChange={onLoginChange} placeholder='Введите логин'/><br/>
-                <input className='main-input' onChange={onPasswordChange} placeholder='Введите пароль'/><p/>
+                <input type='password' className='main-input' onChange={onPasswordChange} placeholder='Введите пароль'/><p/>
                 <button className='main-button' onClick={onButtonClick} disabled={!isValid}>Войти</button>
                 {error!! && <h4>{error}</h4>}
             </div>}

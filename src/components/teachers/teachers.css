@@ -17,7 +17,7 @@
 .teachers .swiper {
     width: 730px;
     height: 675px;
-    background-color: #a7c0cd8e;
+    background-color: #5EADCF;
     border-radius: 30px;
     margin-top: 30px;
 }
@@ -38,14 +38,16 @@
     text-transform: none;
     font-size: 13px;
     display: flex;
+    color: black;
 }
 .header {
     margin: 0 0 -14px 0;
     font-size: 18px;
+    color: black;
 }
 .pink-back {
-    background-color: #fe78608f;
-    height: 30%;
+    background-color: #FE8D72;
+    height: max-content;
     z-index: -1;
     margin-top: 100px;
     position: relative;
@@ -101,7 +103,7 @@
         font-size: 1.45em;
     }
     .pink-back {
-        padding: 20px;
+        padding: 20px 20px 40px 20px;
     }
 }
 @media (max-width: 576px) {
@@ -117,10 +119,10 @@
         float: right;
         width: 45%;
         border-radius: 15px;
-        margin-top: -30px;
+        margin-top: -40px;
     }
     .pink-back {
-        padding: 10px;
+        padding: 20px;
         height: fit-content;
         margin-top: 40px;
     }

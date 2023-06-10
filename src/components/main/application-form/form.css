@@ -1,6 +1,6 @@
 .call-form {
     width: 50%;
-    border: 2px solid rgb(51, 238, 176);
+    border: 2px solid #f8c953;
     border-radius: 20px;
     height: 85%;
     display: flex;
@@ -9,7 +9,7 @@
     justify-content: space-around;
 }
 .call-form .main-button {
-    background: linear-gradient(rgb(252, 220, 77), rgb(247, 228, 146), rgb(252, 220, 77));
+    background: linear-gradient(#FC3000, #FE643F, #FC3000);
     margin: 0;
 }
 .call-form .main-input {

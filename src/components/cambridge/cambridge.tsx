@@ -97,15 +97,21 @@ export const Cambridge: React.FC = () => {
                 <div className='flex-wrapper'>
                     <div className='link'>
                         <img src={imageLink} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org/Images/153312-yle-information-for-candidates.pdf'>Что будет на экзамене Starters</a>
+                        <a href='https://www.cambridgeenglish.org/Images/153312-yle-information-for-candidates.pdf'>
+                            Формат экзамена Starters
+                        </a>
                     </div>
                     <div className='link'>
                         <img src={imageLink} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org/images/153312-yle-information-for-candidates.pdf'>Что будет на экзамене Movers</a>
+                        <a href='https://www.cambridgeenglish.org/images/153312-yle-information-for-candidates.pdf'>
+                            Формат экзамена Movers
+                        </a>
                     </div>
                     <div className='link'>
                         <img src={imageLink} className='pic-icon'></img>
-                        <a href='https://www.cambridgeenglish.org/images/153312-yle-information-for-candidates.pdf'>Что будет на экзамене Flyers</a>
+                        <a href='https://www.cambridgeenglish.org/images/153312-yle-information-for-candidates.pdf'>
+                            Формат экзамена Flyers
+                        </a>
                     </div>
                 </div>
             </div>

@@ -20,7 +20,7 @@ export interface MainState {
 export type LogState = {
     users: User[],
     activeUser: User | undefined,
-    isLogged: boolean
+    isSmbdLogged: boolean
 } 
 export type changingCell = [number, Keys, number, string?, number?];
 

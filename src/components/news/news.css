@@ -14,11 +14,11 @@
     letter-spacing: 2px;
     font-weight: 600;
     color: #ffffff;
-    background: rgb(12, 235, 161);
+    background: #FE8D72;
     box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
     transition: .3s;
     border: none;
-    margin: 10px;
+    margin: 20px;
 }
 .submit-button:disabled {
     background-color: #e5e5e5;
@@ -52,10 +52,10 @@
 
 .news-wrapper {
     width: 80%;
-    background-color: rgba(51, 238, 176, 0.253);
-    border-radius: 15px;
+    background-color: #fe8e728a;
+    border-radius: 5px;
     margin-bottom: 30px;
-    box-shadow: 5px 5px 10px 0 #A7C0CD;
+    box-shadow: 0 0 20px 5px rgba(11, 20, 26, 0.103);
     padding: 20px;
     position: relative;
     height: fit-content;
@@ -65,7 +65,6 @@
 }
 .news-wrapper .swiper-wrapper {
     padding-inline-start: 0;
-    background-color: #d4e4ed8e;
 }
 .news-wrapper .swiper-slide {
     display: flex;
@@ -83,7 +82,7 @@
     font-weight: 900;
 }
 .closing-cross {
-    color: #00f094;
+    color: #FC3000;
     position: absolute;
     left: 97%;
     top: 1%;
@@ -100,7 +99,7 @@
     font-size: 14px;
 }
 .news-wrapper .swiper-button-next, .news-wrapper .swiper-button-prev {
-    color: #00f094;
+    color: #FC3000;
 }
   
 @media (max-width: 992px) {

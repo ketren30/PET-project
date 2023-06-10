@@ -54,19 +54,19 @@ const teachersLogins = [
     }
 ];
 let activeUser;
-let isLogged;
+let isSmbdLogged;
 if (userFromStorage!==null) {
     activeUser=teachersLogins.find((elem) => elem.id===+userFromStorage);
-    isLogged=true;
+    isSmbdLogged=true;
 } else {
     activeUser=undefined;
-    isLogged=false;
+    isSmbdLogged=false;
 }
 
 const initialState: types.LogState = {
     users: teachersLogins,
     activeUser: activeUser,
-    isLogged: isLogged
+    isSmbdLogged: isSmbdLogged
 }
 
 const logReducer = (
@@ -78,7 +78,7 @@ const logReducer = (
             state.users.map((item: types.User)  => {
                 if (item.login===action.payload.login && item.password===action.payload.password) {
                     state.activeUser=item;
-                    state.isLogged=true;
+                    state.isSmbdLogged=true;
                     localStorage.setItem('userID', item.id.toString());
                 }
                 return item
@@ -86,7 +86,7 @@ const logReducer = (
             return state
         case logOut: 
             localStorage.removeItem('userID');
-            return {...state, activeUser: undefined, isLogged: false}
+            return {...state, activeUser: undefined, isSmbdLogged: false}
     }
     return state
 }

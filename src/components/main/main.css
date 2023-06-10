@@ -1,3 +1,9 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .left-margin {
     align-self: flex-start;
     width: 400px;
@@ -5,11 +11,11 @@
 }
 .left-margin h1 {
     font-size: 45px;
-    color: rgb(32, 182, 228);
+    color: white;
 }
 .left-margin h4 {
     font-size: 25px;
-    color: rgb(4, 226, 189);
+    color: white;
 }
 .pic-background {
     width: 100%;
@@ -29,10 +35,10 @@
     align-self: flex-start;
 }
 .call-form-button, .call-form-button-dis {
-    background-color: rgb(52, 253, 186);
+    background-color: #FED672;
     border: none;
     border-radius: 15px 15px 0 0;
-    color: white;
+    color: #FC3000;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 19px;
     font-weight: 600;
@@ -43,6 +49,7 @@
 }
 .call-form-button-dis {
     background: linear-gradient(rgb(153, 152, 152), rgb(187, 187, 187));
+    color: white;
 }
 .call-form-button-dis:hover {
     background: linear-gradient(rgb(87, 86, 86), rgb(148, 147, 147));
@@ -54,20 +61,29 @@
     justify-content: space-around;
     width: 100%;
     height: 450px;
-    background-color: rgb(52, 253, 186);
+    background-color: #FED672;
     border-radius: 0 20px 20px 20px;
 }
-
+.background-picture {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    background-image: url('https://ucarecdn.com/18ff2f08-b784-4bea-8bb5-03177cc2c780/background.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    top: 0;
+}
 .describing {
     width: 40%;
     height: 85%;
-    color: white;
+    color: #FC3000;
     font-size: 45px;
     display: flex;
     align-items: center;
 }
 .application-form h6 {
-    color: white;
+    color: #A41F00;
     font-size: 10px;
     margin: 0 15px;
     text-align: center;
@@ -97,7 +113,7 @@
         font-size: 2.5vw;
     }
     .application-wrapper {
-        margin-top: 30px;
+        margin-top: 140px;
     }
     .abs-img {
         position: absolute;
@@ -110,18 +126,22 @@
     .application-form h6 {
         font-size: 1.5vw;
     }
-    
+    .main {
+        position: relative;
+    }
+    .main::before {
+        content: "";
+        position: absolute;
+        width: 170%;
+        height: 100%;
+        top: -57px;
+        left: 0;
+        z-index: -1;
+        background: url('https://ucarecdn.com/9309fed3-c088-47fc-bfde-58ba4d1738b6/ozK3Elh6tgU.jpg');
+        transform: translate(-20%);
+    }
 }
-.background-picture {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    background-image: url('https://ucarecdn.com/b2be70bf-0dfb-46f6-a30e-ab07247edc1b/Untitled_design__20.png');
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    top: 0;
-}
+
 @media (max-width: 576px) {
     .abs-img {
         transform: translate(-45%);
@@ -129,13 +149,16 @@
     .left-margin h1 {
         font-size: 6.5vw;
         width: 80%;
-        color: rgb(24, 143, 179);
+        color: white;
     }
     .left-margin h4 {
         font-size: 5vw;
-        color:rgb(10, 163, 10);
+        color:white;
     }
     .left-margin {
         margin-top: 20px;
+    }
+    .main::before {
+        transform: translate(-40%);
     }
 }
